@@ -138,6 +138,9 @@ Auth Header:
 
 Copy code
 Authorization: Bearer <token>
+
+```
+
 👥 Roles
 Admin
 
