@@ -20,10 +20,10 @@
 A scalable **task and project management application** designed to streamline team collaboration.
 
 It provides:
-- Secure authentication
-- Role-based access control
-- Task lifecycle tracking
-- Real-time project visibility
+- Secure authentication  
+- Role-based access control  
+- Task lifecycle tracking  
+- Real-time project visibility  
 
 This project demonstrates **full-stack architecture, REST API design, and production-ready practices**.
 
@@ -44,43 +44,32 @@ This project demonstrates **full-stack architecture, REST API design, and produc
 ## 🧱 Tech Stack
 
 **Frontend**
-- React + Vite
-- React Router
-- Axios
-- Tailwind CSS
+- React + Vite  
+- React Router  
+- Axios  
+- Tailwind CSS  
 
 **Backend**
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- JWT + bcrypt
+- Node.js  
+- Express.js  
+- MongoDB + Mongoose  
+- JWT + bcrypt  
 
 ---
 
 ## 🏗️ Architecture
+Client (React) ↓ REST API (Express) ↓ MongoDB Database ↓ Response → UI Update
 
 
-Client (React)
-↓
-REST API (Express)
-↓
-MongoDB Database
-↓
-Response → UI Update
-
+Copy code
 
 ---
 
 ## 📂 Project Structure
+. ├── client/ # Frontend (React) ├── src/ # Backend (Express) ├── scripts/ # Utilities ├── .env.example └── package.json
 
 
-.
-├── client/ # Frontend (React)
-├── src/ # Backend (Express)
-├── scripts/ # Utilities
-├── .env.example
-└── package.json
-
+Copy code
 
 ---
 
@@ -91,12 +80,17 @@ Response → UI Update
 git clone <your-repo-url>
 cd projecttt
 2. Install Dependencies
+bash
+
+Copy code
 npm install
 cd client && npm install && cd ..
 3. Configure Environment
+Create a .env file in root:
 
-Create .env:
+env
 
+Copy code
 PORT=5000
 MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_secret
@@ -105,33 +99,50 @@ CLIENT_URL=http://localhost:5173
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=admin123
 4. Run Application
+Backend:
 
-Backend
+bash
 
+Copy code
 npm run dev
+Frontend:
 
-Frontend
+bash
 
+Copy code
 cd client
 npm run dev
 🔐 API Highlights
-Endpoint	Description
-/api/auth/login	Authenticate user
-/api/projects	Manage projects
-/api/tasks	Manage tasks
-/api/dashboard	Get analytics
+Endpoint
+
+Description
+
+/api/auth/login
+
+Authenticate user
+
+/api/projects
+
+Manage projects
+
+/api/tasks
+
+Manage tasks
+
+/api/dashboard
+
+Get analytics
 
 Auth Header:
 
+
+Copy code
 Authorization: Bearer <token>
-
 👥 Roles
-
 Admin
 
 Full system control
 Manage users, projects, tasks
-
 Member
 
 View assigned tasks
@@ -151,6 +162,7 @@ Team collaboration tools
 Startup task management
 Personal productivity systems
 👨‍💻 Author
-
 Rahul Yadav
 Computer Science Engineering
+
+<div align="center"> <strong>⭐ Star this repo if you found it helpful!</strong> </div>
