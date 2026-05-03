@@ -1,82 +1,110 @@
-<h1 align="center">📋 Task Manager App 🚀</h1> <p align="center"> <b>Manage Projects • Track Tasks • Boost Productivity</b> </p> <p align="center"> <img src="https://img.shields.io/badge/Frontend-React-blue" /> <img src="https://img.shields.io/badge/Backend-Express-green" /> <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen" /> <img src="https://img.shields.io/badge/Auth-JWT-orange" /> <img src="https://img.shields.io/badge/License-MIT-yellow" /> </p>
-📌 Overview
+<h1 align="center">📋 Task Manager App 🚀</h1>
 
-A full-stack task and project management application built using modern web technologies.
-It enables teams to organize projects, assign tasks, and track progress efficiently.
+<p align="center">
+  <b>Manage Projects • Track Tasks • Boost Productivity</b>
+</p>
 
-The system supports:
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend-React-blue" />
+  <img src="https://img.shields.io/badge/Backend-Express-green" />
+  <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen" />
+  <img src="https://img.shields.io/badge/Auth-JWT-orange" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow" />
+</p>
 
-🔐 Secure authentication
-👥 Role-based access control
-📊 Real-time task tracking dashboard
-🔄 Task workflow management
+---
 
-Admins can manage the entire system, while members can focus on their assigned work.
+## 📌 Overview
 
-🎯 Features
-🔐 JWT Authentication (Signup/Login)
-🛡️ Protected Routes (Dashboard, Projects, Tasks)
-👥 Role-Based Access Control (ADMIN & MEMBER)
-📁 Project Management
-👤 Member Management
-📌 Task Assignment & Tracking
-🔄 Task Workflow
-TODO
-IN_PROGRESS
-DONE
-📊 Dashboard Analytics
-Total tasks
-Completed
-Pending
-Overdue
-⚡ Modern UI with Tailwind CSS
-🔧 RESTful API Architecture
-🏗️ System Architecture
+A full-stack **task and project management application** built using modern web technologies.  
+It enables teams to **organize projects, assign tasks, and track progress efficiently**.
 
-Client (React App) → API Requests
-Server (Express) → Authentication & Business Logic
-MongoDB → Data Storage
-JWT → Secure Authorization
+Admins can manage projects, members, and tasks, while members can track and update their assigned work.
 
-Workflow:
-User Login → Receive Token → Access Protected Routes → Manage Tasks → Update Status → Dashboard Updates
+---
 
-🔧 Technologies
-Category	Tools
-Frontend	React, React Router, Axios, Vite, Tailwind CSS
-Backend	Node.js, Express
-Database	MongoDB, Mongoose
-Auth	JSON Web Tokens (JWT), bcrypt
-📂 Project Structure
+## 🎯 Features
+
+- 🔐 JWT-based authentication (Signup/Login)
+- 🛡️ Protected routes (Dashboard, Projects, Tasks)
+- 👥 Role-based access (ADMIN & MEMBER)
+- 📁 Project creation & management
+- 👤 Project member management
+- 📌 Task assignment and tracking
+- 🔄 Task workflow:
+  - TODO
+  - IN_PROGRESS
+  - DONE
+- 📊 Dashboard statistics:
+  - Total tasks
+  - Completed
+  - Pending
+  - Overdue
+- ⚡ Modern UI with React + Tailwind CSS
+- 🔧 RESTful API with Express & MongoDB
+
+---
+
+## 🏗️ System Architecture
+
+Client (React) → API Requests → Express Server → MongoDB Database → Response → UI Update
+
+---
+
+## 🔧 Technologies
+
+| Category | Tools |
+|----------|------|
+| Frontend | React, React Router, Axios, Vite, Tailwind CSS |
+| Backend  | Node.js, Express |
+| Database | MongoDB, Mongoose |
+| Auth     | JWT, bcrypt |
+
+---
+
+## 📂 Project Structure
+
+
 .
-├── client/              # React frontend
-│   └── src/
-│       ├── api/
-│       ├── components/
-│       ├── context/
-│       ├── pages/
-│       └── routes/
+├── client/
+│ └── src/
+│ ├── api/
+│ ├── components/
+│ ├── context/
+│ ├── pages/
+│ └── routes/
 ├── scripts/
-├── src/                 # Express backend
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── app.js
-│   └── server.js
+├── src/
+│ ├── config/
+│ ├── controllers/
+│ ├── middleware/
+│ ├── models/
+│ ├── routes/
+│ ├── app.js
+│ └── server.js
 ├── .env.example
 ├── package.json
 └── README.md
-⚙️ Setup Instructions
-1️⃣ Prerequisites
-Node.js
-npm
-MongoDB (local or Atlas)
-2️⃣ Clone Repository
+
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Prerequisites
+
+- Node.js  
+- npm  
+- MongoDB (local or Atlas)
+
+---
+
+### 2. Clone Repository
+
+```bash
 git clone <your-repository-url>
 cd projecttt
-3️⃣ Install Dependencies
+3. Install Dependencies
 
 Backend
 
@@ -87,7 +115,7 @@ Frontend
 cd client
 npm install
 cd ..
-4️⃣ Environment Variables
+4. Environment Variables
 
 Create a .env file in root:
 
@@ -103,7 +131,7 @@ ADMIN_PASSWORD=admin123
 Frontend config (client/.env):
 
 VITE_API_URL=http://localhost:5000/api
-5️⃣ Seed Admin User
+5. Seed Admin User
 npm run seed:admin
 ▶️ How to Run
 Start Backend
@@ -114,10 +142,11 @@ npm run dev
 🌐 API Overview
 
 Base URL:
-
 http://localhost:5000
-Key Endpoints
+
+Endpoints
 Method	Endpoint	Description	Access
+GET	/	Health check	Public
 POST	/api/auth/signup	Register user	Public
 POST	/api/auth/login	Login	Public
 GET	/api/dashboard	Dashboard stats	Auth
@@ -125,37 +154,32 @@ GET	/api/projects	Get projects	Auth
 POST	/api/projects	Create project	Admin
 GET	/api/tasks	Get tasks	Auth
 POST	/api/tasks	Create task	Admin
-PATCH	/api/tasks/:id/status	Update task	Assigned/Admin
-DELETE	/api/tasks/:id	Delete task	Admin
-🔐 Roles
-🛠️ ADMIN
+PATCH	/api/tasks/:taskId/status	Update task	Assigned/Admin
+DELETE	/api/tasks/:taskId	Delete task	Admin
+🔐 Authentication
+Authorization: Bearer <token>
+👥 Roles
+ADMIN
 Create projects
 Add members
 Create & assign tasks
 Delete tasks
 View all data
-👤 MEMBER
+MEMBER
 View assigned tasks
 Update task status
-Access dashboard
+View dashboard
 ⚠️ Notes
-Ensure MongoDB is running before backend starts
-Do not commit .env file
-Use .env.example for sharing config
-Backend allows requests from:
-http://localhost:5173
-http://127.0.0.1:5173
+Ensure MongoDB is running before starting backend
+Do NOT commit .env file
+Commit .env.example instead
 🚧 Future Enhancements
 🔔 Real-time notifications
-📊 Advanced analytics dashboard
-🌐 Deployment (Docker / Cloud)
-📱 Mobile responsive improvements
+📊 Advanced analytics
+🌐 Cloud deployment
+📱 Mobile responsiveness
 📈 Use Cases
-Team project management
-Startup task tracking
-Personal productivity system
-Academic project collaboration
-👨‍💻 Author
-
-Rahul Yadav
-B.Tech / Computer Science
+Team collaboration
+Startup project management
+Personal productivity tracking
+Academic projects
