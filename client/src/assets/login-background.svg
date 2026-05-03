@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" role="img" aria-label="">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eefcf8"/>
+      <stop offset="0.46" stop-color="#e8f2ff"/>
+      <stop offset="1" stop-color="#fff4e6"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.86"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.32"/>
+    </linearGradient>
+    <linearGradient id="tealBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0f172a" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1100" fill="url(#sky)"/>
+  <path d="M0 782C210 682 344 704 556 776C761 845 925 865 1120 756C1324 642 1446 648 1600 702V1100H0Z" fill="#d9f99d" opacity="0.45"/>
+  <path d="M-120 292C104 178 326 198 542 282C769 369 1011 385 1234 250C1384 159 1510 145 1690 205V0H-120Z" fill="#bae6fd" opacity="0.48"/>
+  <path d="M100 178L1500 45L1544 382L145 515Z" fill="#ffffff" opacity="0.36"/>
+  <path d="M-70 920L1440 640L1488 900L-22 1180Z" fill="#fb923c" opacity="0.18"/>
+
+  <g filter="url(#softShadow)">
+    <rect x="205" y="225" width="430" height="280" rx="24" fill="url(#glass)"/>
+    <rect x="250" y="282" width="176" height="22" rx="11" fill="#0f766e" opacity="0.76"/>
+    <rect x="250" y="338" width="310" height="16" rx="8" fill="#64748b" opacity="0.32"/>
+    <rect x="250" y="380" width="258" height="16" rx="8" fill="#64748b" opacity="0.24"/>
+    <rect x="250" y="432" width="112" height="34" rx="17" fill="url(#tealBand)" opacity="0.84"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="905" y="335" width="360" height="390" rx="28" fill="url(#glass)"/>
+    <rect x="955" y="400" width="250" height="52" rx="14" fill="#ffffff" opacity="0.74"/>
+    <rect x="955" y="482" width="250" height="52" rx="14" fill="#ffffff" opacity="0.62"/>
+    <rect x="955" y="564" width="250" height="52" rx="14" fill="#ffffff" opacity="0.7"/>
+    <rect x="955" y="646" width="148" height="36" rx="18" fill="#f59e0b" opacity="0.72"/>
+  </g>
+
+  <g opacity="0.48">
+    <path d="M750 208H1420" stroke="#0f766e" stroke-width="18" stroke-linecap="round"/>
+    <path d="M738 260H1220" stroke="#14b8a6" stroke-width="18" stroke-linecap="round"/>
+    <path d="M150 790H748" stroke="#334155" stroke-width="16" stroke-linecap="round" opacity="0.22"/>
+    <path d="M150 842H604" stroke="#0f766e" stroke-width="16" stroke-linecap="round" opacity="0.24"/>
+  </g>
+</svg>

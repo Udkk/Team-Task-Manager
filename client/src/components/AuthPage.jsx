@@ -105,6 +105,7 @@ const FormPanel = ({
 
 const AuthPage = ({
   eyebrow = 'Task Manager',
+  backgroundImage,
   panelHeading,
   panelSubtext,
   panelButtonLabel,
@@ -122,9 +123,29 @@ const AuthPage = ({
   footerLinkLabel,
   footerLinkTo
 }) => {
+  const hasBackgroundImage = Boolean(backgroundImage);
+
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gray-100 px-4 py-8 sm:px-6 lg:px-8">
-      <div className="grid w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-lg md:grid-cols-2">
+    <main
+      className={`relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-8 sm:px-6 lg:px-8 ${
+        hasBackgroundImage ? 'bg-slate-900' : 'bg-gray-100'
+      }`}
+    >
+      {hasBackgroundImage && (
+        <>
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-slate-950/30"
+          />
+        </>
+      )}
+
+      <div className="relative z-10 grid w-full max-w-5xl overflow-hidden rounded-2xl bg-white/95 shadow-2xl ring-1 ring-white/40 backdrop-blur md:grid-cols-2">
         <BrandingPanel
           heading={panelHeading}
           subtext={panelSubtext}

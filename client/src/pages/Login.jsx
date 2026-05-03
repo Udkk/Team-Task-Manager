@@ -3,6 +3,7 @@ import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 import AuthPage from '../components/AuthPage.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
+import loginBackground from '../assets/login-background.svg';
 
 const loginFields = [
   {
@@ -66,6 +67,7 @@ const Login = () => {
 
   return (
     <AuthPage
+      backgroundImage={loginBackground}
       panelHeading="New Here?"
       panelSubtext="Create an account to plan work, organize projects, and keep your team moving with less noise."
       panelButtonLabel="Create Account"
