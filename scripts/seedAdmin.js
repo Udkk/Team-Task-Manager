@@ -8,11 +8,13 @@ dotenv.config();
 
 const seedAdmin = async () => {
   try {
-    if (!process.env.MONGO_URI) {
-      throw new Error('MONGO_URI is not defined');
+    const mongoUri = process.env.MONGO_URI || process.env.MONGO_URL;
+
+    if (!mongoUri) {
+      throw new Error('MONGO_URI or MONGO_URL is not defined');
     }
 
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(mongoUri);
 
     const name = process.env.ADMIN_NAME || 'Admin User';
     const email = process.env.ADMIN_EMAIL || 'admin@example.com';
