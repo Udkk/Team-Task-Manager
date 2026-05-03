@@ -141,31 +141,43 @@ Authorization: Bearer <token>
 
 ```
 
-👥 Roles
-Admin
+## 👥 Roles
 
-Full system control
-Manage users, projects, tasks
-Member
+### 🛠️ Admin
+- Full system control  
+- Manage users, projects, and tasks  
 
-View assigned tasks
-Update task status
-📊 Key Highlights
-Clean REST API design
-Scalable folder structure
-Secure authentication flow
-Separation of concerns (MVC pattern)
-🚧 Future Improvements
-Real-time updates (WebSockets)
-Notifications system
-Deployment (Docker / Cloud)
-Advanced analytics dashboard
-📌 Use Cases
-Team collaboration tools
-Startup task management
-Personal productivity systems
-👨‍💻 Author
-Rahul Yadav
+### 👤 Member
+- View assigned tasks  
+- Update task status  
+
+
+## 📊 Key Highlights
+
+- Clean REST API design  
+- Scalable folder structure  
+- Secure authentication flow  
+- Separation of concerns (MVC pattern)  
+
+
+## 🚧 Future Improvements
+
+- Real-time updates using WebSockets  
+- Notification system  
+- Deployment using Docker / Cloud platforms  
+- Advanced analytics dashboard  
+
+
+## 📌 Use Cases
+
+- Team collaboration tools  
+- Startup task management systems  
+- Personal productivity applications  
+
+
+## 👨‍💻 Author
+
+**Udit kumar**  
 Computer Science Engineering
 
 <div align="center"> <strong>⭐ Star this repo if you found it helpful!</strong> </div>
