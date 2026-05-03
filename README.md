@@ -101,7 +101,7 @@ Client (React) → API Requests → Express Server → MongoDB Database → Resp
 
 ### 2. Clone Repository
 
-```bash
+
 git clone <your-repository-url>
 cd projecttt
 3. Install Dependencies
