@@ -1,8 +1,7 @@
-import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
-import User from '../src/models/userModel.js';
+import ensureAdmin from '../src/utils/ensureAdmin.js';
 
 dotenv.config();
 
@@ -16,29 +15,7 @@ const seedAdmin = async () => {
 
     await mongoose.connect(mongoUri);
 
-    const name = process.env.ADMIN_NAME || 'Admin User';
-    const email = process.env.ADMIN_EMAIL || 'admin@example.com';
-    const password = process.env.ADMIN_PASSWORD || 'admin123';
-
-    const existingAdmin = await User.findOne({ email });
-
-    if (existingAdmin) {
-      existingAdmin.name = name;
-      existingAdmin.password = await bcrypt.hash(password, 10);
-      existingAdmin.role = 'ADMIN';
-      await existingAdmin.save();
-
-      console.log(`Admin updated: ${email}`);
-    } else {
-      await User.create({
-        name,
-        email,
-        password: await bcrypt.hash(password, 10),
-        role: 'ADMIN'
-      });
-
-      console.log(`Admin created: ${email}`);
-    }
+    await ensureAdmin();
   } catch (error) {
     console.error(`Seed admin error: ${error.message}`);
     process.exitCode = 1;

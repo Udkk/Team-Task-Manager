@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import app from './app.js';
 import connectDB from './config/db.js';
 import { errorHandler, notFound } from './middleware/errorMiddleware.js';
+import ensureAdmin from './utils/ensureAdmin.js';
 
 dotenv.config();
 
@@ -37,6 +38,8 @@ app.use(errorHandler);
 
 const startServer = async () => {
   await connectDB();
+  // In deployed environments, ensure the configured admin can log in to this MongoDB.
+  await ensureAdmin();
 
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
