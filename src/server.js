@@ -1,9 +1,9 @@
-
 import dotenv from 'dotenv';
 
 import app from './app.js';
 import connectDB from './config/db.js';
 import { errorHandler, notFound } from './middleware/errorMiddleware.js';
+import ensureAdmin from './utils/ensureAdmin.js';
 
 dotenv.config();
 
@@ -15,6 +15,9 @@ app.use(errorHandler);
 
 const startServer = async () => {
   await connectDB();
+
+  // Create or verify the admin account using environment variables.
+  await ensureAdmin();
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
