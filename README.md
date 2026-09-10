@@ -1,4 +1,4 @@
-<h1 align="center">📋 Task Manager App</h1>
+# 📋 Team Task Manager
 
 <p align="center">
   <strong>Full-Stack Project Management System</strong><br/>
@@ -10,174 +10,335 @@
   <img src="https://img.shields.io/badge/Backend-Node.js-green" />
   <img src="https://img.shields.io/badge/Database-MongoDB-brightgreen" />
   <img src="https://img.shields.io/badge/Auth-JWT-orange" />
-  <img src="https://img.shields.io/badge/Status-Active-success" />
+  <img src="https://img.shields.io/badge/Status-Deployed-success" />
 </p>
 
 ---
 
 ## ✨ Overview
 
-A scalable **task and project management application** designed to streamline team collaboration.
+**Team Task Manager** is a full-stack project and task management application designed to simplify team collaboration and task tracking.
 
-It provides:
-- Secure authentication  
-- Role-based access control  
-- Task lifecycle tracking  
-- Real-time project visibility  
+The application provides:
 
-This project demonstrates **full-stack architecture, REST API design, and production-ready practices**.
+* 🔐 Secure user authentication
+* 👥 Role-based access control
+* 📁 Project and member management
+* 📌 Task assignment and tracking
+* 🔄 Task status workflow
+* 📊 Dashboard analytics
+* 🛡️ Protected API routes
+
+The project demonstrates a complete **React + Node.js + Express + MongoDB** architecture with JWT-based authentication and role-based authorization.
 
 ---
 
 ## 🚀 Core Features
 
-- 🔐 Authentication using JWT  
-- 👥 Role-based access (**Admin / Member**)  
-- 📁 Project creation and member management  
-- 📌 Task assignment and lifecycle tracking  
-- 🔄 Status workflow: `TODO → IN_PROGRESS → DONE`  
-- 📊 Dashboard analytics (total, pending, completed, overdue)  
-- 🛡️ Protected routes & secure APIs  
+* 🔐 JWT-based authentication
+* 👥 Role-based access control (**Admin / Member**)
+* 📁 Project creation and member management
+* 📌 Task creation and assignment
+* 🔄 Task workflow: `TODO → IN_PROGRESS → DONE`
+* 📊 Dashboard analytics:
+
+  * Total tasks
+  * Pending tasks
+  * Completed tasks
+  * Overdue tasks
+* 🛡️ Protected routes and APIs
+* 🔒 Password hashing using bcrypt
+* ☁️ Deployed frontend and backend
 
 ---
 
 ## 🧱 Tech Stack
 
-**Frontend**
-- React + Vite  
-- React Router  
-- Axios  
-- Tailwind CSS  
+### Frontend
 
-**Backend**
-- Node.js  
-- Express.js  
-- MongoDB + Mongoose  
-- JWT + bcrypt  
+* React
+* Vite
+* React Router
+* Axios
+* Tailwind CSS
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT
+* bcrypt
+
+### Deployment
+
+* Render
+* MongoDB Atlas
 
 ---
 
 ## 🏗️ Architecture
-Client (React) ↓ REST API (Express) ↓ MongoDB Database ↓ Response → UI Update
 
-
-Copy code
+```text
+┌─────────────────────┐
+│   React Frontend    │
+│      Vite + UI      │
+└──────────┬──────────┘
+           │
+           │ REST API
+           ▼
+┌─────────────────────┐
+│   Express Backend   │
+│   Node.js + JWT     │
+└──────────┬──────────┘
+           │
+           │ Mongoose
+           ▼
+┌─────────────────────┐
+│    MongoDB Atlas    │
+│      Database       │
+└─────────────────────┘
+```
 
 ---
 
 ## 📂 Project Structure
-. ├── client/ # Frontend (React) ├── src/ # Backend (Express) ├── scripts/ # Utilities ├── .env.example └── package.json
 
-
-Copy code
+```text
+Team-Task-Manager/
+│
+├── client/                  # React + Vite frontend
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── scripts/
+│   └── seedAdmin.js         # Admin initialization
+│
+├── src/                     # Express backend
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── app.js
+│   └── server.js
+│
+├── .env.example
+├── .gitignore
+├── package.json
+└── README.md
+```
 
 ---
 
 ## ⚙️ Getting Started
 
-### 1. Clone Repository
+### 1. Clone the Repository
+
 ```bash
-git clone <your-repo-url>
-cd projecttt
-2. Install Dependencies
-bash
+git clone https://github.com/Udkk/Team-Task-Manager.git
+cd Team-Task-Manager
+```
 
-Copy code
+### 2. Install Backend Dependencies
+
+```bash
 npm install
-cd client && npm install && cd ..
-3. Configure Environment
-Create a .env file in root:
+```
 
-env
+### 3. Install Frontend Dependencies
 
-Copy code
-PORT=5000
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret
+```bash
+cd client
+npm install
+cd ..
+```
+
+### 4. Configure Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+PORT=8080
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_strong_jwt_secret
+
 CLIENT_URL=http://localhost:5173
 
+ADMIN_NAME=Admin User
 ADMIN_EMAIL=admin@example.com
-ADMIN_PASSWORD=admin123
-4. Run Application
-Backend:
+ADMIN_PASSWORD=your_secure_admin_password
+```
 
-bash
+> ⚠️ Never commit your `.env` file or real credentials to GitHub.
 
-Copy code
+### 5. Run the Backend
+
+From the project root:
+
+```bash
 npm run dev
-Frontend:
+```
 
-bash
+### 6. Run the Frontend
 
-Copy code
+Open another terminal:
+
+```bash
 cd client
 npm run dev
-🔐 API Highlights
-Endpoint
-
-Description
-
-/api/auth/login
-
-Authenticate user
-
-/api/projects
-
-Manage projects
-
-/api/tasks
-
-Manage tasks
-
-/api/dashboard
-
-Get analytics
-
-Auth Header:
-
-
-Copy code
-Authorization: Bearer <token>
-
 ```
+
+The frontend will normally be available at:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 🔐 Authentication & Authorization
+
+The application uses **JWT authentication** to secure protected routes.
+
+After successful login, the server returns a JWT token which is used to authenticate subsequent API requests.
+
+Example:
+
+```http
+Authorization: Bearer <token>
+```
+
+Passwords are securely hashed using **bcrypt** before being stored in MongoDB.
+
+---
+
+## 🔌 API Highlights
+
+| Endpoint                | Description                  |
+| ----------------------- | ---------------------------- |
+| `POST /api/auth/login`  | Authenticate a user          |
+| `POST /api/auth/signup` | Register a new user          |
+| `/api/projects`         | Manage projects              |
+| `/api/tasks`            | Manage tasks                 |
+| `/api/dashboard`        | Retrieve dashboard analytics |
+| `/api/users`            | Manage users                 |
+| `GET /api/health`       | Check API status             |
+
+---
 
 ## 👥 Roles
 
 ### 🛠️ Admin
-- Full system control  
-- Manage users, projects, and tasks  
+
+Admins have elevated access to the system and can:
+
+* Manage users
+* Create and manage projects
+* Manage project members
+* Manage tasks
+* Access administrative functionality
 
 ### 👤 Member
-- View assigned tasks  
-- Update task status  
 
+Members can:
 
-## 📊 Key Highlights
+* Access their assigned projects
+* View assigned tasks
+* Update task status
+* Track their task progress
 
-- Clean REST API design  
-- Scalable folder structure  
-- Secure authentication flow  
-- Separation of concerns (MVC pattern)  
+---
 
+## 📊 Dashboard
+
+The dashboard provides an overview of task activity, including:
+
+* Total tasks
+* Pending tasks
+* Completed tasks
+* Overdue tasks
+* Project and task information
+
+This gives teams a centralized view of their current workload and progress.
+
+---
+
+## ☁️ Deployment
+
+The application is deployed using:
+
+* **Frontend:** Render Static Site
+* **Backend:** Render Web Service
+* **Database:** MongoDB Atlas
+
+### Backend API
+
+```text
+https://team-task-manager-92sv.onrender.com
+```
+
+### Health Check
+
+```text
+https://team-task-manager-92sv.onrender.com/api/health
+```
+
+The health endpoint can be used to verify that the deployed backend is running.
+
+---
+
+## ⭐ Key Highlights
+
+* Clean REST API architecture
+* MVC-based backend structure
+* JWT authentication
+* Role-based authorization
+* Secure password hashing
+* MongoDB database integration
+* Protected API routes
+* React-based responsive frontend
+* Separate frontend and backend deployment
+* Cloud-hosted MongoDB database
+* Environment-based configuration
+
+---
 
 ## 🚧 Future Improvements
 
-- Real-time updates using WebSockets  
-- Notification system  
-- Deployment using Docker / Cloud platforms  
-- Advanced analytics dashboard  
+* 🔄 Real-time updates using WebSockets
+* 🔔 Notification system
+* 📈 More advanced analytics
+* 👥 Multiple teams with isolated team-level administration
+* 📅 Task deadlines and calendar integration
+* 📎 File attachments for tasks
 
+---
 
 ## 📌 Use Cases
 
-- Team collaboration tools  
-- Startup task management systems  
-- Personal productivity applications  
+* Team collaboration
+* Software project management
+* Startup task management
+* Academic project coordination
+* Personal productivity
+* Small-team workflow management
 
+---
 
 ## 👨‍💻 Author
 
-**Udit kumar**  
-Computer Science Engineering
+**Udit Kumar**
 
-<div align="center"> <strong>⭐ Star this repo if you found it helpful!</strong> </div>
+Computer Science Engineering Student
+
+---
+
+<p align="center">
+  <strong>⭐ If you found this project useful, consider starring the repository!</strong>
+</p>
