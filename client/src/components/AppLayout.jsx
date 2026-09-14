@@ -7,7 +7,7 @@ const AppLayout = () => {
   const { logout, user } = useAuth();
 
   return (
-    <main className="min-h-screen bg-slate-50 lg:flex">
+    <main className="min-h-screen bg-slate-950 lg:flex">
       <Sidebar onLogout={logout} user={user} />
 
       <section className="min-w-0 flex-1 lg:ml-64">
